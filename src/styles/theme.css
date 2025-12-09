@@ -1,0 +1,22 @@
+@theme {
+  --color-bg: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-border-subtle: #e2e8f0;
+
+  --color-brand: #0dfcd8;
+  --color-brand-dark: #39bda9;
+
+  --color-income: #22c55e;
+  --color-expense: #fb6b5b;
+  --color-savings: #a75e40;
+
+  --color-text-main: #0f172a;
+  --color-text-muted: #6b7280;
+  --color-danger: #ef4444;
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
+}

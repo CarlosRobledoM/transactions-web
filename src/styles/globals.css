@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+html,
+body {
+  @apply bg-bg text-text-main antialiased;
+}
+
+* {
+  @apply box-border;
+}
