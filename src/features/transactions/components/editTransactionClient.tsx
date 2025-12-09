@@ -7,6 +7,7 @@ import { TransactionForm } from "./transactionForm";
 import { Button } from "@/components/ui/button";
 import { useLogout } from "@/features/auth/hooks/useLogout";
 import { useAuthStore } from "@/lib/state/authStore";
+import { RxExit } from "react-icons/rx";
 
 interface EditTransactionClientProps {
   id: string;
@@ -59,13 +60,6 @@ export function EditTransactionClient({ id }: EditTransactionClientProps) {
     <div className="space-y-6">
       <header className="flex items-center justify-between">
         <div>
-          <Button
-            type="button"
-            variant="ghost"
-            onClick={() => router.push("/dashboard")}
-          >
-            Volver
-          </Button>
           <h1 className="text-xl font-semibold">Editar transacción</h1>
           <p className="text-sm text-text-muted">
             Actualiza la información y guarda los cambios.
@@ -78,11 +72,12 @@ export function EditTransactionClient({ id }: EditTransactionClientProps) {
           <Button
             type="button"
             variant="ghost"
-            className="px-3 py-1 text-xs"
+            className="px-3 py-1 text-xs gap-2  "
             onClick={handleLogout}
             disabled={isLoggingOut}
           >
             {isLoggingOut ? "Cerrando..." : "Cerrar sesión"}
+            <RxExit className="h-5 w-5" />
           </Button>
         </div>
       </header>
@@ -94,6 +89,14 @@ export function EditTransactionClient({ id }: EditTransactionClientProps) {
           onSubmitSuccess={() => router.push("/dashboard")}
         />
       </section>
+
+      <Button
+        type="button"
+        variant="ghost"
+        onClick={() => router.push("/dashboard")}
+      >
+        Volver
+      </Button>
     </div>
   );
 }

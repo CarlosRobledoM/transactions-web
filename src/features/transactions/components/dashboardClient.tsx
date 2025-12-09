@@ -12,6 +12,9 @@ import { Button } from "@/components/ui/button";
 import { useUiStore } from "@/lib/state/uiStore";
 import { useAuthStore } from "@/lib/state/authStore";
 import { useLogout } from "@/features/auth/hooks/useLogout";
+import { RxExit } from "react-icons/rx";
+import Image from "next/image";
+import logo from "../../../app/icon.png";
 
 export function DashboardClient() {
   const { transactions, isLoading, errorMessage } = useTransactions();
@@ -35,9 +38,15 @@ export function DashboardClient() {
     <>
       <div className="space-y-8">
         <header className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark">
-              <span className="text-lg font-semibold text-surface">▮▮▮</span>
+          <div className="flex items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center">
+              <Image
+                className="rounded-full"
+                src={logo.src}
+                alt="FinTracker Logo"
+                width={34}
+                height={34}
+              />
             </div>
             <span className="text-xl font-semibold">FinTracker</span>
           </div>
@@ -49,11 +58,12 @@ export function DashboardClient() {
             <Button
               type="button"
               variant="ghost"
-              className="px-3 py-1 text-xs"
+              className="px-3 py-1 gap-2 text-xs"
               onClick={handleLogout}
               disabled={isLoggingOut}
             >
               {isLoggingOut ? "Cerrando..." : "Cerrar sesión"}
+              <RxExit className="h-5 w-5" />
             </Button>
           </div>
         </header>
@@ -85,14 +95,16 @@ export function DashboardClient() {
           <>
             <TransactionSummaryCards />
 
-            <section className="flex items-center justify-between">
+            <section className="flex flex-col md:flex-row items-center justify-between">
               <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
-                <h2 className="text-xl font-semibold">Transacciones</h2>
+                <h2 className="text-xl font-semibold text-center md:text-start">
+                  Transacciones
+                </h2>
                 <TransactionFilters />
               </div>
               <Button
                 type="button"
-                className="bg-expense px-4 py-2 text-surface hover:scale-[1.01] active:scale-[0.98]"
+                className="bg-expense px-4 py-2 text-surface hover:scale-[1.01] active:scale-[0.98] mt-3 md:mt-0"
                 onClick={openNewTransactionModal}
               >
                 Nueva transacción

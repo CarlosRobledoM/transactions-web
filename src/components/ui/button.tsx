@@ -14,7 +14,7 @@ export function Button({
   ...restProps
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center rounded-md text-sm font-medium transition-transform duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 disabled:cursor-not-allowed disabled:opacity-60";
+    "px-4 inline-flex items-center justify-center rounded-md text-sm font-medium transition-transform duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 disabled:cursor-not-allowed disabled:opacity-60";
   const variantClasses =
     variant === "primary"
       ? "bg-brand-dark text-surface hover:scale-[1.01] hover:shadow-soft active:scale-[0.98]"
